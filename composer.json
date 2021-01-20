@@ -5,13 +5,13 @@
     "license": "MIT",
     "type": "library",
     "support": {
-        "issues": "https://github.com/skywit/laravel-scout-tntsearch/issues",
-        "source": "https://github.com/skywit/laravel-scout-tntsearch"
+        "issues": "https://github.com/vanry/laravel-scout-tntsearch/issues",
+        "source": "https://github.com/vanry/laravel-scout-tntsearch"
     },
     "authors": [
         {
-            "name": "skywit",
-            "email": "hd_master@163.com"
+            "name": "vanry",
+            "email": "ivanry@163.com"
         }
     ],
     "require": {
@@ -30,7 +30,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Skywit\\Scout\\": "src"
+            "Vanry\\Scout\\": "src"
         },
         "files": [
             "src/helpers.php"
@@ -47,13 +47,13 @@
         },
         "laravel": {
             "providers": [
-                "Skywit\\Scout\\TNTSearchScoutServiceProvider"
+                "Vanry\\Scout\\TNTSearchScoutServiceProvider"
             ]
         }
     },
     "suggest": {
         "fukuball/jieba-php": "Required to use the Jieba tokenizer (~0.25).",
-        "skywit/scws": "Required to use the SCWS tokenizer (^2.0)."
+        "vanry/scws": "Required to use the SCWS tokenizer (^2.0)."
     },
     "config": {
         "sort-packages": true
