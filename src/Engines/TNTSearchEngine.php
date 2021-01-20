@@ -199,6 +199,8 @@ class TNTSearchEngine extends Engine
         
         $query = $this->applyWith($query);
 
+		$query = $this->applySelect($query);
+
         $models = $query->get();
 
         return empty($this->builder->orders) ? $models->sortBy(function ($model) use ($results) {
@@ -245,6 +247,13 @@ class TNTSearchEngine extends Engine
     protected function applyWith(Query $query) {
         if(!empty($with = $this->builder->with)) {
             return $query->with($with);
+        }
+        return $query;
+    }
+
+	protected function applySelect(Query $query) {
+        if(!empty($select = $this->builder->select)) {
+            return $query->select($select);
         }
         return $query;
     }
