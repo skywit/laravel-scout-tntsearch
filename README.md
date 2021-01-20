@@ -1,12 +1,12 @@
 
-> 说明: `2.x` 版本只支持 `Laravel 5.5` 以上版本，`Laravel 5.5`以下版本请使用 [1.x版本](https://github.com/vanry/laravel-scout-tntsearch/tree/1.x)。
+> 说明: `2.x` 版本只支持 `Laravel 5.5` 以上版本，`Laravel 5.5`以下版本请使用 [1.x版本](https://github.com/skywit/laravel-scout-tntsearch/tree/1.x)。
 
 ## 安装
 
 > 需安装并开启 `sqlite` 扩展
 
 ``` bash
-composer require vanry/laravel-scout-tntsearch
+composer require skywit/laravel-scout-tntsearch
 ```
 
 ### Laravel
@@ -20,7 +20,7 @@ php artisan vendor:publish --provider="Laravel\Scout\ScoutServiceProvider"
 * 如需修改 `tntsearch` 默认配置，发布 `tntsearch` 配置文件。
 
 ```bash
-php artisan vendor:publish --provider="Vanry\Scout\TNTSearchScoutServiceProvider"
+php artisan vendor:publish --provider="Skywit\Scout\TNTSearchScoutServiceProvider"
 ```
 
 ### Lumen
@@ -35,7 +35,7 @@ $app->withFacades();
 $app->withEloquent()
 
 // 注意先后顺序
-$app->register(Vanry\Scout\LumenServiceProvider::class);
+$app->register(Skywit\Scout\LumenServiceProvider::class);
 $app->register(Laravel\Scout\ScoutServiceProvider::class);
 ```
 
@@ -115,7 +115,7 @@ Post::search('laravel教程')->get();
 - **scws**
 
 ```bash
-composer require vanry/scws
+composer require skywit/scws
 ```
 
 - **jieba**
@@ -178,7 +178,7 @@ highlight($post->title, $query, 'strong');
 * **Highlighter 对象**
 
 ```php
-use Vanry\Scout\Highlighter;
+use Skywit\Scout\Highlighter;
 
 // ...
 
