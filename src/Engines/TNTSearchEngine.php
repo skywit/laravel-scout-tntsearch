@@ -196,6 +196,8 @@ class TNTSearchEngine extends Engine
         $query = $this->applyWheres($query);
 
         $query = $this->applyOrders($query);
+        
+        $query = $this->applyWith($query);
 
         $models = $query->get();
 
@@ -238,6 +240,13 @@ class TNTSearchEngine extends Engine
         return array_reduce($this->builder->orders, function ($query, $order) {
             return $query->orderBy($order['column'], $order['direction']);
         }, $query);
+    }
+        
+    protected function applyWith(Query $query) {
+        if(!empty($with = $this->builder->with)) {
+            return $query->with($with);
+        }
+        return $query;
     }
 
     /**
